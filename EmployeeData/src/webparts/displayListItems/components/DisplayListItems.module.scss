@@ -1,0 +1,64 @@
+.listitemscontainer {
+  margin: 20px auto;
+  max-width: 100%;
+  overflow-x: auto; /* Allows horizontal scrolling on small screens */
+  background-color: #ddd; /* Light background for the container */
+}
+
+.employeetable {
+  width: 100%;
+  border-collapse: collapse; /* Ensure the table borders collapse */
+  table-layout: auto; /* Distribute columns evenly */
+}
+
+.employeetable th, 
+.employeetable td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left; /* Align left for readability */
+  white-space: normal; /* Allows wrapping */
+  word-wrap: break-word; /* Break long words */
+}
+
+.employeetable th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.employeetable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Responsive Design: Adjusts table layout for smaller screens */
+@media (max-width: 768px) {
+  .employeetable th,
+  .employeetable td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .employeetable th, 
+  .employeetable td {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+  }
+
+  .employeetable td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: inline-block;
+    width: 30%;
+  }
+
+  .employeetable tr {
+    margin-bottom: 15px;
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .employeetable td:last-child {
+    border-bottom: 0;
+  }
+}
